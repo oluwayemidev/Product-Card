@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <input
+          type="text"
+          class="search"
+          placeholder="Search product"
+          onkeyup="searchProduct()"
+        />
+        <select class="categories">
+          <option value=""></option>
+        </select>
+        <button class="filter">Filter +</button>
+        <div class="filteredValues"></div>
+        <div class="cartBtn" onclick="checkOutProducts()">
+          <button class="count">0</button>
+          &#X1F6D2;
+        </div>
+      </div>
+      <div class="checkOut">
+        <div class="header">Invoice</div>
+        <div class="tableContainer">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total ($)</th>
+              </tr>
+            </thead>
+            <tbody id="checkOutBody"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">Total</td>
+                <td id="totalPrice">$0.00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="footer">
+          <p>Proceed to payment:</p>
+          <button>-&#x1F4B3;-</button>
+        </div>
+      </div>
+      <div class="productContainer"></div>
+      <div class="productOverlay">
+        <button class="close" onclick="closeOverlay()">&times;</button>
+        <div class="overlayContainer"></div>
+      </div>
+    </div>
+  </body>
+</html>
